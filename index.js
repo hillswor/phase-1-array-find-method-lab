@@ -64,7 +64,7 @@ let victory;
 
 function superbowlWin(array) {
 	if (array.find(findWin) === undefined) {
-		return array.find(findWin);
+		return undefined;
 	} else {
 		return array.find(findWin).year;
 	}
