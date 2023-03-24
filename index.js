@@ -19,8 +19,8 @@ const record = [
 	{ year: "2001", result: "N/A" },
 	{ year: "2000", result: "N/A" },
 	{ year: "1999", result: "N/A" },
-	{ year: "1998", result: "W" },
-	{ year: "1997", result: "W" },
+	{ year: "1998", result: "L" },
+	{ year: "1997", result: "L" },
 	{ year: "1996", result: "N/A" },
 	{ year: "1995", result: "N/A" },
 	{ year: "1994", result: "N/A" },
@@ -60,17 +60,18 @@ const record = [
 	{ year: "1960", result: "N/A" },
 ];
 
+let victory;
+
 function superbowlWin(array) {
-	let win;
-	function findWin(game) {
-		if (game.result === "W") {
-			win = game.year;
-		} else {
-			win = undefined;
-		}
+	if (array.find(findWin) === undefined) {
+		return array.find(findWin);
+	} else {
+		return array.find(findWin).year;
 	}
-	array.find(findWin);
-	return win;
+}
+
+function findWin(game) {
+	return game.result === "W";
 }
 
 const persons = [
